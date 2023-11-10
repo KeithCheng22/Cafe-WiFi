@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+        .card {
+            width: 100%;
+            height: 100%;
+            perspective: 1000px;
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 18px;
+            color: black;
+        }
+
+        .card-face.front {
+            background-color: white;
+            transform: rotateY(0deg);
+        }
+
+        .card-face.back {
+            background-color: white;
+            transform: rotateY(180deg);
+        }
+
+        .card-img-top {
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card-body {
+            flex: 1;
+        }
+
+        .card-text {
+            margin-bottom: 20px;
+        }
+
+        .list-group {
+            margin: 0;
+        }
+
+        .list-group-item {
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+
+<header class="p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+        <img src="/static/img/icon.jpg" class="bi me-2" width="70" height="70" role="img" aria-label="Bootstrap"></img>
+      </a>
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li style="padding-top: 15px; font-size:25px; font-family: 'Caveat', cursive;
+    font-family: 'Caveat Brush', cursive;
+    font-family: 'Cedarville Cursive', cursive;" class="px-2 lead">Cafe & WiFi</li>
+      </ul>
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+        <input name="search" type="search" class="form-control" placeholder="Search..." aria-label="Search">
+      </form>
+
+      <div class="dropdown text-end">
+        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="/static/img/354384-200.png" alt="mdo" width="32" height="32" class="rounded-circle">
+        </a>
+        <ul class="dropdown-menu text-small" style="">
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="logout">Sign out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="py-5 text-center" style="background-image: url('/static/img/cafes.jpg');
+  background-size: cover; height:300px; width:100%;">
+  <div class="row py-lg-5" >
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 style="font-family: 'Caveat', cursive;
+    font-family: 'Caveat Brush', cursive;
+    font-family: 'Cedarville Cursive', cursive; color:white; padding-top:30px" class="text1 fw-bold">Cafes</h1>
+      <p style="color: white;" class="text2 lead">Indulge in the exquisite world of cafes, just at your fingertips!</p>
+    </div>
+  </div>
+</section>
+
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+      <div class="col reveal">
+        <div class="card shadow-sm">
+            <div class="card-inner">
+                <div class="card-face front">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="https://images.squarespace-cdn.com/content/v1/5734f3ff4d088e2c5b08fe13/1555848382269-9F13FE1WQDNUUDQOAOXF/ke17ZwdGBToddI8pDm48kAeyi0pcxjZfLZiASAF9yCBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzV8NE8s7067ZLWyi1jRvJklJnlBFEUyq1al9AqaQ7pI4DcRJq_Lf3JCtFMXgpPQyk/copeland-park-bar-peckham" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></img>
+                    <div class="card-body">
+                        <p class="card-text"><b>Social - Copeland Road</b>: Peckham</p>
+                        <p style="margin-top: 55px"> Each sip of the meticulously brewed coffee reveals a tapestry of flavors—a robust yet smooth blend, carrying hints of caramel and a whisper of nuttiness, awakening the senses with each delicate sip.</p>
+                    </div>
+                </div>
+                <div class="card-face back">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Opening Hours: 0900 - 1600</li>
+                        <li class="list-group-item">Coffee Price: £2.40</li>
+                        <li class="list-group-item">WiFi: 🌐🌐🌐🌐</li>
+                        <li class="list-group-item">Sockets: 🔌🔌🔌</li>
+                        <li class="list-group-item">Seats: 25+ </li>
+                        <li class="list-group-item">Toilets: Yes</li>
+                        <a href="https://g.page/CopelandSocial?share" target="_blank">
+                            <button style="margin-left:18px" >Google Map</button>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+          <div class="col reveal">
+        <div class="card shadow-sm">
+            <div class="card-inner">
+                <div class="card-face front">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="https://atlondonbridge.com/wp-content/uploads/2019/02/Pano_9758_9761-Edit-190918_LTS_Science_Gallery-Medium-Crop-V2.jpg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></img>
+                    <div class="card-body">
+                        <p class="card-text"><b>Science Gallery London</b>: London Bridge</p>
+                        <p style="padding-top:5px">Offers a dynamic space where various exhibitions, events, and interactive installations are curated to engage audiences, especially young adults, in discussions and experiences related to contemporary scientific themes.</p>
+                    </div>
+                </div>
+                <div class="card-face back">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Opening Hours: 0700 - 2200</li>
+                        <li class="list-group-item">Coffee Price: £2.75</li>
+                        <li class="list-group-item">WiFi: 🌐🌐🌐</li>
+                        <li class="list-group-item">Sockets: 🔌🔌🔌🔌🔌</li>
+                        <li class="list-group-item">Seats: 50+ </li>
+                        <li class="list-group-item">Toilets: Yes</li>
+                        <a href="https://g.page/scigallerylon?share" target="_blank">
+                            <button style="margin-left:18px" >Google Map</button>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="col reveal">
+        <div class="card shadow-sm">
+            <div class="card-inner">
+                <div class="card-face front">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="https://lh3.googleusercontent.com/p/AF1QipOMzXpKAQNyUvrjTGHqCgWk8spwnzwP8Ml2aDKt=s0" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></img>
+                    <div class="card-body">
+                        <p class="card-text"><b>One & All Cafe</b>: Peckham</p>
+                        <p style="padding-top:30px">The air within the café hums with a symphony of subtle delights—the rich, earthy aroma of freshly ground coffee beans. It's a haven where the ambiance meets the tantalizing taste of coffee.</p>
+                    </div>
+                </div>
+                <div class="card-face back">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Opening Hours: 0830 - 2100</li>
+                        <li class="list-group-item">Coffee Price: £3.00</li>
+                        <li class="list-group-item">WiFi: 🌐🌐🌐🌐🌐</li>
+                        <li class="list-group-item">Sockets: 🔌🔌</li>
+                        <li class="list-group-item">Seats: 15+ </li>
+                        <li class="list-group-item">Toilets: Yes</li>
+                        <a href="https://g.page/one-all-cafe?share" target="_blank">
+                            <button style="margin-left:18px" >Google Map</button>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+  <script src="/static/js/scripts.js"></script>
+
+
+  {% endblock %}

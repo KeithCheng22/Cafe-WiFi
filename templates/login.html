@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% from "bootstrap5/form.html" import render_form %}
+
+{% block content %}
+<style>
+body {
+  background-image: url('/static/img/bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+<body class="text-center">
+  <div class="container-fluid">
+    <div class="row justify-content-center align-items-center vh-100">
+      <div class="fade-out col-10 col-sm-8 col-lg-6 py-5" id="textToFadeOut">
+          <div class="col-lg-12">
+          <h1 style="font-family: 'Caveat', cursive;
+            font-family: 'Caveat Brush', cursive;
+            font-family: 'Cedarville Cursive', cursive;" class="display-5 fw-bold lh-1 mb-3">Welcome Back!</h1>
+          <div>
+            <p class="lead">We are so excited to have you here with us again!</p>
+          </div>
+        </div>
+          {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      {% for message in messages %}
+      <p style="padding-top:10px" class="lead flash">{{ message }}</p>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+        {{render_form(form, novalidate=True, button_map={"submit": "light"}) }}
+      </div>
+    </div>
+  </div>
+
+</body>
+{% endblock %}
