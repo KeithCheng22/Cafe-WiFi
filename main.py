@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'thisissecret'
 Bootstrap5(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('sqlite:///cafe.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///cafe.db"
 db = SQLAlchemy()
 db.init_app(app)
 
