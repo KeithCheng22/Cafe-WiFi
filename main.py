@@ -33,8 +33,8 @@ class User(UserMixin, db.Model):
     name = db.Column(db.String(100))
 
 
-# with app.app_context():
-#     db.create_all()
+with app.app_context():
+    db.create_all()
 
 @app.route('/cafes')
 def cafes():
