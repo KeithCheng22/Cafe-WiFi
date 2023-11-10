@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'thisissecret'
 Bootstrap5(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///cafe.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///cafe.db")
 db = SQLAlchemy()
 db.init_app(app)
 
@@ -33,8 +33,8 @@ class User(UserMixin, db.Model):
     name = db.Column(db.String(100))
 
 
-with app.app_context():
-    db.create_all()
+# with app.app_context():
+#     db.create_all()
 
 @app.route('/cafes')
 def cafes():
